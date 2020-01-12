@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResetearContrasenha"
+    android:background="@drawable/grad_bg"
+    android:animateLayoutChanges="true">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        >
+
+        <ImageView
+            android:id="@+id/birdGameLoginImage"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/bird_frame1"/>
+
+        <RelativeLayout
+            android:id="@+id/rLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/birdGameLoginImage">
+
+
+            <TextView
+                android:id="@+id/txvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Cambiar Contraseña"
+                android:textColor="@color/white"
+                android:textSize="30sp"/>
+
+            <LinearLayout
+                android:id="@+id/lLayout1"
+                android:layout_below="@id/txvLogin"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Usuario"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textAllCaps="true"/>
+
+                    <EditText
+                        android:id="@+id/etLoginCambioContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:inputType="textPersonName"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Nueva Contraseña"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textAllCaps="true"/>
+
+                    <EditText
+                        android:id="@+id/etNuevaContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPassword"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Repite Contraseña"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textAllCaps="true"/>
+
+                    <EditText
+                        android:id="@+id/etRepiteNuevaContraseña"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="sans-serif-light"
+                        android:inputType="textPassword"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <Button
+                android:id="@+id/btConfirmarCambioContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_drawable"
+                android:text="Cambiar Contraseña"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/lLayout1"
+                android:textAllCaps="false"
+                android:layout_marginTop="50dp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="70dp"
+                android:paddingRight="70dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rLayout2">
+
+        <Button
+            android:id="@+id/btIrARegistrarUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="Sign Up"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif"/>
+
+        <Button
+            android:id="@+id/btAcercaDe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:text="Acerca De"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
