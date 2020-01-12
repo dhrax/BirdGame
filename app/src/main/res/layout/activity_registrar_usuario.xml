@@ -92,7 +92,9 @@
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textAllCaps="true"/>
-
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
                     <EditText
                         android:id="@+id/etCrearContraseña"
                         android:layout_width="match_parent"
@@ -105,6 +107,17 @@
                         android:paddingRight="15dp"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
+            <TextView
+                android:id="@+id/txvSignUpVerOcultarNuevaContraseña"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:paddingTop="7dp"
+                android:text="OCULTAR"
+                android:textSize="15sp"/>
+        </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,19 +134,32 @@
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:textAllCaps="true"/>
-
-                    <EditText
-                        android:id="@+id/etRepiteContraseñaCreada"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/et_bg"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPassword"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <EditText
+                            android:id="@+id/etRepiteContraseñaCreada"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/et_bg"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPassword"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/txvSignUpVerOcultarRepiteContraseña"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:paddingTop="7dp"
+                            android:text="OCULTAR"
+                            android:textSize="15sp"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
             </LinearLayout>

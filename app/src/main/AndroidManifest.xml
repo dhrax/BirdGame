@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".ResetearContrasenha"></activity>
-        <activity android:name=".RegistrarUsuario" />
+        <activity android:name=".RegistrarUsuario"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

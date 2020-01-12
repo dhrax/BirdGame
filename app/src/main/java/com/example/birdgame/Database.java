@@ -2,18 +2,16 @@ package com.example.birdgame;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-
 import static android.provider.BaseColumns._ID;
 import static com.example.birdgame.AppConstants.BBDD;
+import static com.example.birdgame.AppConstants.CONTRASEÑA;
 import static com.example.birdgame.AppConstants.TABLA_USUARIOS;
 import static com.example.birdgame.AppConstants.USUARIO;
-import static com.example.birdgame.AppConstants.CONTRASEÑA;
 
 
 public class Database extends SQLiteOpenHelper {
@@ -26,10 +24,9 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("DROP TABLE "+TABLA_USUARIOS+";");
+        //db.execSQL("DROP TABLE "+TABLA_USUARIOS+";");
         db.execSQL("CREATE TABLE "+ TABLA_USUARIOS + "("+ _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 USUARIO + " TEXT, "+CONTRASEÑA +" TEXT"+");");
-
     }
 
     @Override

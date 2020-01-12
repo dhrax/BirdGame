@@ -23,7 +23,7 @@ public class AppConstants {
 
     //Constantes de BBDD
     public final static String BBDD = "bird_game.db";
-    public final static String TABLA_USUARIOS = "puntuaciones";
+    public final static String TABLA_USUARIOS = "usuarios";
     public final static String USUARIO = "usuario";
     public final static String CONTRASEÑA = "contraseña";
 

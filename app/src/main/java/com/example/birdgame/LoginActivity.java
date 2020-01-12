@@ -7,16 +7,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     RelativeLayout rLayout1, rLayout2;
     Button btLogin, btIrARegistrarUsuario, btOlvidarContrasena;
+    TextView txvVerOcultarCOntraseña;
+    EditText etContraseña;
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
         @Override
@@ -43,6 +47,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btIrARegistrarUsuario.setOnClickListener(this);
         btOlvidarContrasena = findViewById(R.id.btOlvidarContrasena);
         btOlvidarContrasena.setOnClickListener(this);
+        txvVerOcultarCOntraseña= findViewById(R.id.txvVerOcultarCOntraseña);
+        txvVerOcultarCOntraseña.setOnClickListener(this);
+
+        etContraseña = findViewById(R.id.etContraseña);
 
         handler.postDelayed(runnable, 2000);
     }
@@ -54,7 +62,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.btLogin:
                 EditText etLogin = findViewById(R.id.etLogin);
-                EditText etContraseña = findViewById(R.id.etContraseña);
 
                 String nomUsuario = etLogin.getText().toString().toLowerCase();
                 String contraseña = etContraseña.getText().toString().toLowerCase();
@@ -148,7 +155,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(this, ResetearContrasenha.class);
                 startActivity(intent);
                 break;
-
+            case R.id.txvVerOcultarCOntraseña:
+                String valor = txvVerOcultarCOntraseña.getText().toString();
+                if(valor.equals("MOSTRAR")){
+                    etContraseña.setTransformationMethod(null);
+                    txvVerOcultarCOntraseña.setText("OCULTAR");
+                }else{
+                    etContraseña.setTransformationMethod(new PasswordTransformationMethod());
+                    txvVerOcultarCOntraseña.setText("MOSTRAR");
+                }
+                break;
             default:
 
                 break;
