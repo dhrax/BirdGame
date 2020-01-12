@@ -95,29 +95,29 @@
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
-                    <EditText
-                        android:id="@+id/etCrearContraseña"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/et_bg"
-                        android:fontFamily="sans-serif-light"
-                        android:inputType="textPassword"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:textColor="@color/white"
-                        android:textSize="15sp" />
-            <TextView
-                android:id="@+id/txvSignUpVerOcultarNuevaContraseña"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
-                android:paddingTop="7dp"
-                android:text="OCULTAR"
-                android:textSize="15sp"/>
-        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/etCrearContraseña"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/et_bg"
+                            android:fontFamily="sans-serif-light"
+                            android:inputType="textPassword"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                        <TextView
+                            android:id="@+id/txvSignUpVerOcultarNuevaContraseña"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:paddingTop="7dp"
+                            android:text="MOSTRAR"
+                            android:textSize="15sp"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -157,7 +157,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginRight="10dp"
                             android:paddingTop="7dp"
-                            android:text="OCULTAR"
+                            android:text="MOSTRAR"
                             android:textSize="15sp"/>
                     </RelativeLayout>
                 </LinearLayout>
@@ -202,7 +202,7 @@
             android:fontFamily="sans-serif"/>
 
         <Button
-            android:id="@+id/btAcercaDe"
+            android:id="@+id/btSignUpAcercaDe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"

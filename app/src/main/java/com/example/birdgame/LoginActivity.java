@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     RelativeLayout rLayout1, rLayout2;
     Button btLogin, btIrARegistrarUsuario, btOlvidarContrasena;
-    TextView txvVerOcultarCOntraseña;
+    TextView txvLogInVerOcultarCOntraseña;
     EditText etContraseña;
     Handler handler = new Handler();
     Runnable runnable = new Runnable() {
@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Database db = new Database(this);
         db.nuevoUsuario("val", "123");
+        db.close();
 
         rLayout1 = findViewById(R.id.rLayout1);
         rLayout2 = findViewById(R.id.rLayout2);
@@ -47,8 +48,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btIrARegistrarUsuario.setOnClickListener(this);
         btOlvidarContrasena = findViewById(R.id.btOlvidarContrasena);
         btOlvidarContrasena.setOnClickListener(this);
-        txvVerOcultarCOntraseña= findViewById(R.id.txvVerOcultarCOntraseña);
-        txvVerOcultarCOntraseña.setOnClickListener(this);
+        txvLogInVerOcultarCOntraseña= findViewById(R.id.txvLogInVerOcultarCOntraseña);
+        txvLogInVerOcultarCOntraseña.setOnClickListener(this);
 
         etContraseña = findViewById(R.id.etContraseña);
 
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
 
             case R.id.btLogin:
-                EditText etLogin = findViewById(R.id.etLogin);
+                EditText etLogin = findViewById(R.id.etLogin);//te amo
 
                 String nomUsuario = etLogin.getText().toString().toLowerCase();
                 String contraseña = etContraseña.getText().toString().toLowerCase();
@@ -71,7 +72,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
 
                 Database db = new Database(this);
-                int res = db.comprobarUsuarioContraseña(nomUsuario, contraseña);
+                int res = db.comprobarUsuarioContrasenha(nomUsuario, contraseña);
+                db.close();
                 switch(res){
 
                     case 0:
@@ -155,18 +157,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(this, ResetearContrasenha.class);
                 startActivity(intent);
                 break;
-            case R.id.txvVerOcultarCOntraseña:
-                String valor = txvVerOcultarCOntraseña.getText().toString();
-                if(valor.equals("MOSTRAR")){
-                    etContraseña.setTransformationMethod(null);
-                    txvVerOcultarCOntraseña.setText("OCULTAR");
-                }else{
-                    etContraseña.setTransformationMethod(new PasswordTransformationMethod());
-                    txvVerOcultarCOntraseña.setText("MOSTRAR");
-                }
+            case R.id.txvLogInVerOcultarCOntraseña:
+                Util.toggleVerOcultarCntraseña(etContraseña, txvLogInVerOcultarCOntraseña);
                 break;
             default:
-
                 break;
         }
     }

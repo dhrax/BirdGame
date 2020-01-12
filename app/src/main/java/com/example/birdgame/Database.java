@@ -24,7 +24,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //db.execSQL("DROP TABLE "+TABLA_USUARIOS+";");
+        db.execSQL("DROP TABLE IF EXISTS "+TABLA_USUARIOS+";");
         db.execSQL("CREATE TABLE "+ TABLA_USUARIOS + "("+ _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 USUARIO + " TEXT, "+CONTRASEÑA +" TEXT"+");");
     }
@@ -38,11 +38,12 @@ public class Database extends SQLiteOpenHelper {
      *
      * @param usuario
      * @param contraseña
-     * @return  0: Usuario no existe
+     * @return  Devuelve un valor de comprobación:
+     *          0: Usuario no existe
      *          1: Usuario y contraseña correctos
      *          2: Contraseña incorrecta
      */
-    public int comprobarUsuarioContraseña(String usuario, String contraseña){
+    public int comprobarUsuarioContrasenha(String usuario, String contraseña){
         int res=0;
 
         if(existeUsuario(usuario)>0){
@@ -55,11 +56,24 @@ public class Database extends SQLiteOpenHelper {
         return res;
     }
 
-    public void actualizarUsuario(){
+    /**
+     *
+     * @param usuario
+     * @param nuevaContraseña
+     * @param antiguaContraseña
+     *
+     * Actualiza la contraseña del usuario
+     */
+    public void actualizarUsuario(String usuario, String nuevaContraseña, String antiguaContraseña){
 
 
     }
 
+    /**
+     *
+     * @param usuario
+     * @return Retorna el número de usuarios que hay en la BBDD con ese nombre
+     */
     public long existeUsuario(String usuario){
         SQLiteDatabase db = getReadableDatabase();
         String[] usuarios = new String[]{usuario};
@@ -68,7 +82,13 @@ public class Database extends SQLiteOpenHelper {
                 "usuario=?", usuarios);
     }
 
-
+    /**
+     *
+     * @param usuario
+     * @param contraseña
+     *
+     * Inserta un nuevo usuario en la BBDD
+     */
     public void nuevoUsuario(String usuario, String contraseña){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -78,6 +98,15 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    /**
+     *
+     * @param usuario
+     * @param contraseña
+     * @return devuelve el numero de registros para ese usuario y contraseña
+     *
+     *          0: la contraseña es incorrecta
+     *          >0: la contraseña es correcta
+     */
     public long contraseñaCorrecta(String usuario, String contraseña){
         SQLiteDatabase db = getReadableDatabase();
         String[] datos = new String[]{usuario, contraseña};
